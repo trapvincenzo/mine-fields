@@ -1,5 +1,5 @@
 <?php
-namespace MineFields\Field;
+namespace MineFields\Field\Builder;
 
 class FieldBuilder
 {

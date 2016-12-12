@@ -1,7 +1,7 @@
 <?php
-namespace Tests\Unit\MineFields\Field;
+namespace Tests\Unit\MineFields\Field\Builder;
 
-use MineFields\Field\FieldBuilder;
+use MineFields\Field\Builder\FieldBuilder;
 
 class FieldBuilderTest extends \PHPUnit_Framework_TestCase
 {
