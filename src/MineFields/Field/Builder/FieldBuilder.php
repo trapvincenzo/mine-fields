@@ -1,6 +1,8 @@
 <?php
 namespace MineFields\Field\Builder;
 
+use MineFields\Field\Object\Cell;
+
 class FieldBuilder
 {
 	/**
@@ -28,7 +30,7 @@ class FieldBuilder
 		for ($i = 0; $i < $header[1]; $i++) {
 			$field[] = [];
 			for ($j = 0; $j < $header[0]; $j++) {
-				$field[$i][] = $rows[$i][$j];
+				$field[$i][] = new Cell($rows[$i][$j], $i, $j);
 			}
 		}
 
