@@ -2,6 +2,7 @@
 namespace MineFields\Field\Builder;
 
 use MineFields\Field\Object\Cell;
+use MineFields\Field\Object\Field;
 use MineFields\Field\Object\Row;
 
 class FieldBuilder
@@ -26,7 +27,7 @@ class FieldBuilder
 	{
 		$rows = explode(PHP_EOL, $this->input);
 		$header = explode(' ', array_shift($rows));
-		$field = [];
+		$finalRows = [];
 
 		for ($i = 0; $i < $header[1]; $i++) {
 			$cells = [];
@@ -34,9 +35,9 @@ class FieldBuilder
 				$cells[] = new Cell($rows[$i][$j], $i, $j);
 			}
 
-			$field[] = new Row($cells);
+			$finalRows[] = new Row($cells);
 		}
 
-		return $field;
+		return new Field((int)$header[0], (int)$header[1], $finalRows);
 	}
 }
