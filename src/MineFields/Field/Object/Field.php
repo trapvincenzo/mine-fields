@@ -47,7 +47,7 @@ class Field
 	}
 
 	/**
-	 * @return array
+	 * @return Row[]
 	 */
 	public function getData()
 	{

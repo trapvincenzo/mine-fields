@@ -19,7 +19,7 @@ class FieldManager
 	public function getCellByPosition(Field $field, $x, $y)
 	{
 		if ($x < 0 || $x > $field->getColumns() || $y < 0 || $y > $field->getRows()) {
-			throw new InvalidCellPosition();
+			throw new InvalidCellPosition(sprintf('%s, %s', $x, $y));
 		}
 
 		$fieldData = $field->getData();
