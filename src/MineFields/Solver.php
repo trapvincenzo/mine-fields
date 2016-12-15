@@ -40,7 +40,8 @@ class Solver
 
     /**
      * @param Field $field
-     * @return string
+     *
+     * @return Field
      */
     public function solve(Field $field)
     {
@@ -55,28 +56,7 @@ class Solver
             $transformedField[] = new Row($newCols);
         }
 
-        return $this->getOutput(new Field($field->getColumns(), $field->getRows(), $transformedField));
-    }
-
-    /**
-     * @param Field $field
-     *
-     * @return string
-     */
-    private function getOutput(Field $field)
-    {
-        $output = [];
-
-        foreach ($field->getData() as $row) {
-            $newRow = '';
-
-            foreach ($row->getCols() as $col) {
-                $newRow .= $col->getValue();
-            }
-            $output[] = $newRow;
-        }
-
-        return implode("\n", $output);
+        return new Field($field->getColumns(), $field->getRows(), $transformedField);
     }
 
     /**
