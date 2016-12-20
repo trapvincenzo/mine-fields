@@ -21,7 +21,7 @@ class FieldBuilder
     }
 
     /**
-     * @return array
+     * @return Field
      */
     public function build()
     {
