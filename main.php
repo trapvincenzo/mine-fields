@@ -7,10 +7,10 @@ use MineFields\Solver;
 require_once 'vendor/autoload.php';
 
 $given = <<<EOD
-3 3
-*..
-..*
-...
+4 3
+*...
+..*.
+....
 EOD;
 
 $field = new FieldBuilder();
