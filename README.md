@@ -29,15 +29,15 @@ Example output (for the above input)
 ```
 
 ##Install dependencies
-```php
+```bash
 composer install
 ```
 ##Run example
-```php
+```bash
 php main.php
 ```
 
 ##Run tests
-```php
+```bash
 vendor/bin/phpunit tests/
 ```
