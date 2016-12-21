@@ -29,10 +29,10 @@ class FieldBuilder
         $header = explode(' ', array_shift($rows));
         $finalRows = [];
 
-        for ($i = 0; $i < $header[1]; $i++) {
+        for ($y = 0; $y < $header[1]; $y++) {
             $cells = [];
-            for ($j = 0; $j < $header[0]; $j++) {
-                $cells[] = new Cell($rows[$i][$j], $i, $j);
+            for ($x = 0; $x < $header[0]; $x++) {
+                $cells[] = new Cell($rows[$y][$x], $x, $y);
             }
 
             $finalRows[] = new Row($cells);

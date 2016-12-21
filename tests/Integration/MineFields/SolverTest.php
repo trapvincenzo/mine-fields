@@ -42,5 +42,19 @@ class SolverTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $this->assertEquals($expected, $solver->solve($given));
+
+        $expected = new Field(3, 3, [
+            new Row([new Cell('*', 0, 0), new Cell(2, 1, 0), new Cell(1, 2, 0)]),
+            new Row([new Cell(1, 0, 1), new Cell(2, 1, 1), new Cell('*', 2, 1)]),
+            new Row([new Cell(0, 0, 2), new Cell(1, 1, 2), new Cell(1, 2, 2)]),
+        ]);
+
+        $given = new Field(3, 3, [
+            new Row([new Cell('*', 0, 0), new Cell('.', 1, 0), new Cell('.', 2, 0)]),
+            new Row([new Cell('.', 0, 1), new Cell('.', 1, 1), new Cell('*', 2, 1)]),
+            new Row([new Cell('.', 0, 2), new Cell('.', 1, 2), new Cell('.', 2, 2)]),
+        ]);
+
+        $this->assertEquals($expected, $solver->solve($given));
     }
 }
